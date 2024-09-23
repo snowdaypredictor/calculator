@@ -1,52 +1,17 @@
-body {
-  margin: 0; /* Remove default margin */
-}
-
-#intro-wrap {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Cover entire viewport height */
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
-  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjguj-ZmEpjPUyqfjBRHeGClmDKYT9KF2pieYlAYyQeMS5CPnDQa2jsSh6cIRYOM4zHSb4o3N3qnvMcdY8AWEVPo4mKKiC_icuZYJIWjELaBiNuNAldKrUC1LPfi5yN2HtIqQIBPhNwxEf0NTDU4DrOMz6fwP-9nVFRICPfeqws4iOpSnxeFIIwkEdUjt0/s16000/snow%20day%20calculator.jpg;);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  width: 1000px; /* Adjust width as needed */
-  border-radius: 10px;
-}
-
-/* Other styles remain unchanged */
-
-
-    h1 {
-      color: #333;
-    }
-
-    form {
+form {
       margin-top: 20px;
     }
 
-    input[type=&quot;text&quot;] {
+    input[type="text"] {
       padding: 10px;
-      width: 300px;
+      width: 600px;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 16px;
     }
 
     button {
-      padding: 15px 20px;
+      padding: 11px 20px;
       border: none;
       border-radius: 5px;
       background-color: #02CCFE;
@@ -70,42 +35,3 @@ body {
     .error-message {
       color: red;
     }
-     @media only screen and (max-width: 600px) {
-    .container {
-      width: 90%; /* Adjust width for mobile */
-      max-width: 90%; /* Set a maximum width for better readability */
-      left: 206px; /* Adjust left margin for mobile */
-    }
-  .about-content p {
-    font-size: 16px;
-    color: #ffffff;
-    line-height: 1.6;
-    margin-right :10px;
-        margin-left :10px;
-
-  }
-     .use-content p {
-    font-size: 16px;
-    color: #ffffff;
-    line-height: 1.6;
-    margin-right :10px;
-        margin-left :10px;
-
-  }
-      .disclaimer-content p {
-    font-size: 16px;
-    color: #ffffff;
-    line-height: 1.6;
-    margin-right :10px;
-        margin-left :10px;
-
-  }
-       .privacy-policy-content p {
-    font-size: 16px;
-    color: #ffffff;
-    line-height: 1.6;
-    margin-right :10px;
-        margin-left :10px;
-
-  }
-  }
