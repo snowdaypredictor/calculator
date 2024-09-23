@@ -1,5 +1,54 @@
+<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixljGrHSOZbuFUoAa7SYL331RC2p8YiBUBXGVhHlXI2rr8_ooMTFSvDSaUZahyphenhyphengXqK-hG4-XvI6obADFQpM7CvJ2iuhKUGQK-MQwcmnBfettW3KU-Gr9bvP6k3i4ykZaDDr93hyPwZL6eKT09lr_Dz1x-4Mtve8RrG30DivYMsd39HVbb1xaT8yIVDV1A/s6000/Snow%20Day%20Calculator.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="4000" data-original-width="6000" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixljGrHSOZbuFUoAa7SYL331RC2p8YiBUBXGVhHlXI2rr8_ooMTFSvDSaUZahyphenhyphengXqK-hG4-XvI6obADFQpM7CvJ2iuhKUGQK-MQwcmnBfettW3KU-Gr9bvP6k3i4ykZaDDr93hyPwZL6eKT09lr_Dz1x-4Mtve8RrG30DivYMsd39HVbb1xaT8yIVDV1A/s16000/Snow%20Day%20Calculator.jpg" /></a></div><br /><h2 style="text-align: center;">Snow Day Calculator</h2>
+<p style="text-align: center;">Welcome to Snow Day Calculator. It's an online tool developed by Tools Net Free to calculate the Snow Day Chances based on the current weather situation in a region. It also accommodates the weather situation in the past few hours. The tool works as a Snow Day Predictor to save your trips and plans if there is a snow day tomorrow. Moreover, it also helps the students to know if there will be a holiday tomorrow. However, like all other online tools, it only shows the information based on the data fetched by the API provider. So, we aren't responsible for any miscalculation or misunderstanding. Please remember that the tool only shows the calculated results when you use it. Final results may vary. Anyway, let's find out if there will be a Snow Day tomorrow.</p><p style="text-align: center;"><br /></p><style>
+ form {
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 600px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 11px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #02CCFE;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #0384fc;
+      color: white;
+    }
+
+    #weatherResult {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .error-message {
+      color: red;
+    }
+</style>
 <form id="weatherForm" style="text-align: center;">
               <input id="locationInput" required="" type="text" />
               <button type="submit">Get Snow Day Chances</button>
             </form>
             <div id="weatherResult"></div>
+          
+<script>
+    document.getElementById("weatherForm").addEventListener("submit",async function(event){event.preventDefault();const locationInput=document.getElementById("locationInput").value.trim();if(locationInput){await getWeather(locationInput);}else{alert("Please enter a valid location.");}});
+async function getWeather(location){const apiKey='425e41d509acb59d13323baa9f8d4db8';const apiUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;try{const response=await fetch(apiUrl);const data=await response.json();console.log(data);if(data.cod==="404"){document.getElementById("weatherResult").innerHTML="<p class='error-message'>Location not found.</p>";return;}const forecast=data.list.map(item=>({date:new Date(item.dt*1000),weather:item.weather[0].main.toLowerCase(),}));console.log("Forecast:",forecast);const snowCount=forecast.filter(item=>item.weather.includes("snow")).length;const snowDayChances=(snowCount/forecast.length)*100;const snowDayMessage=`Snow Day Chances: ${snowDayChances.toFixed(2)}%`;document.getElementById("weatherResult").innerHTML=`<p>${snowDayMessage}</p>`;}catch(error){console.error("Error fetching weather data:",error);document.getElementById("weatherResult").innerHTML="<p class='error-message'>Failed to fetch weather data. Please try again later.</p>";}}
+  </script>
+<br />
+<br />
+<h2 style="text-align: center;">How to Use Snow Day Predictor?</h2>
+<p style="text-align: center;">Snow Day Calculator is designed to provide the best user experience. Our developers primarily worked on its layout to make it easy for you. Therefore, to use Snow Day Calculator 2024, you only need to enter your "City Name or Zip Code" into the search bar and press the "Snow Day Chances" button. You will get the results within a few seconds. The results will be in the form of Chances in Percentage for the Snow Day in your city. You can use it to plan your trips or school holidays based on the chances. However, it must be noted that any final decision must be made with official announcements or forecasts. The tool is only available to help you get a tentative report about Snow Day predictions in your city. We hope that you will love using it and find it helpful. If so, you can show some support by following our social handles. Thanks for your love and support. You can also look at other free tools on our website from here.</p><p style="text-align: center;"><br /></p>
